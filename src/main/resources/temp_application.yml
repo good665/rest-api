@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: programmers spring assignments
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+    cache-duration: PT1H
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    platform: h2
+    driver-class-name: org.h2.Driver
+    url: "jdbc:h2:mem:spring_assignments;MODE=MYSQL;DB_CLOSE_DELAY=-1"
+    username: sa
+    password:
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 5
+      pool-name: H2_DB
+server:
+  port: 8080
+jwt:
+  token:
+    header: X-PRGRMS-AUTH
+    issuer: programmers
+    client-secret: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaXNzIjoicHJvZ3JhbW1lcnMiLCJuYW1lIjoidGVzdGVyIiwiaWF0IjoxNjExMTQxMjMxLCJ1c2VyS2V5IjoxfQ.XG9ehe1-Q0kWGRhJTi5pWQ-D6ymA5aMKGV7I0qnT9lkz1end0FuEByixkUNEgGY3yiCZiAh380fnf9Q38SiEzw
+    expiry-seconds: 0
